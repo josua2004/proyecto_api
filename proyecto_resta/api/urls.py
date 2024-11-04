@@ -1,0 +1,36 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('users/', views.UserListCreate.as_view(), name='user-list-create'),  
+    path('users/<int:pk>/', views.UserDetail.as_view(), name='user-detail'),  
+    path('categoriamenu/', views.CategoriaMenuListCreate.as_view(), name='categoriamenu-list'), 
+    path('categoriamenu/<int:pk>/', views.CategoriaMenuDetail.as_view(), name='categoriamenu-detail'),
+    path('menu/', views.MenuListCreate.as_view(), name='mesas-list'),
+    path('menu/<int:pk>/', views.MenuDetail.as_view(), name='mesas-detail'),
+    path('historialestados/', views.HistorialEstadosListCreate.as_view(), name='historialestados-list'), 
+    path('historialestados/<int:pk>/', views.HistorialEstadosDetail.as_view(), name='historialestados-detail'),
+    path('pedidos/', views.PedidoListCreate.as_view(), name='pedidos-list'), 
+    path('pedidos/<int:pk>/', views.PedidoDetail.as_view(), name='pedidos-detail'), 
+    path('promociones/', views.PromocionListCreate.as_view(), name='promociones-list'), 
+    path('promociones/<int:pk>/', views.PromocionDetail.as_view(), name='promociones-detail'), 
+    path('metodosdepago/', views.MetodoDePagoListCreate.as_view(), name='metodosdepago-list'),
+    path('metodosdepago/<int:pk>/', views.MetodoDePagoDetail.as_view(), name='metodosdepago-detail'),
+    path('estadomesas/', views.MesasEstadoListCreate.as_view(), name='estadomesas-list'),
+    path('estadomesas/<int:pk>/', views.MesasEstadoDetail.as_view(), name='estadomesas-detail'),
+    path('mesas/', views.MesasListCreate.as_view(), name='mesas-list'),
+    path('mesas/<int:pk>/', views.MesasDetail.as_view(), name='mesas-detail'),
+    path('comentarios/', views.ComentariosListCreate.as_view(), name='comentarios-list'),
+    path('comentarios/<int:pk>/', views.ComentariosDetail.as_view(), name='comentarios-detail'),
+    path('notificaciones/', views.NotificacionesListCreate.as_view(), name='notificaciones-list'),
+    path('notificaciones/<int:pk>/', views.NotificacionesDetail.as_view(), name='notificaciones-detail'),
+    path('reservas/', views.ReservaListCreate.as_view(), name='reserva-list'),
+    path('reservas/<int:pk>/', views.ReservaDetail.as_view(), name='reserva-detail'),
+    path('facturas/', views.FacturaListCreate.as_view(), name='facturas-list'),
+    path('facturas/<int:pk>/', views.FacturaDetail.as_view(), name='facturas-detail'),
+    path('detallespedido/', views.DetallePedidoListCreate.as_view(), name='detallespedido-list'),
+    path('detallespedido/<int:pk>/', views.DetallePedidoDetail.as_view(), name='detallespedido-detail'),
+    path('pedidos/cliente/<int:id_cliente>/', views.PedidoPorUsuario.as_view(), name='pedidos_por_usuario'),
+    path('comentarios/usuario/<int:usuario_id>/', views.ComentarioPorUsuario.as_view(), name='comentarios_por_usuario'),
+]
+
